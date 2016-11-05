@@ -14,6 +14,7 @@ hadoop fs -rm -r output/Spark/InvertedIndexer
 
 # Run Spark application on HDFS.
 spark-submit --master yarn --deploy-mode client src/InvertedIndexer.py -i "input/InvertedIndexer" -o "output/Spark/InvertedIndexer/InvertedIndex"
+spark-submit --master yarn --deploy-mode client src/WikiSearch.py -i "output/Spark/InvertedIndexer/InvertedIndex" -q "parks in usa" -k 100 -o "output/Spark/InvertedIndexer/WikiSearch"
 
 
 # Get final output from HDFS.

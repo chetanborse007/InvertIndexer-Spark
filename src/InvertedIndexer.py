@@ -50,11 +50,11 @@ def ExtractTitleAndText(wikiPage):
 
     # Extract title of wikipedia page
     if titleMatcher:
-        title = titleMatcher.group(1).strip()
+        title = titleMatcher.group(1).strip().lower()
 
     # Extract text body of wikipedia page
     if textMatcher:
-        text = textMatcher.group(1).strip()
+        text = textMatcher.group(1).strip().lower()
 
     # Tokenize terms in text body of wikipedia page
     if text:
